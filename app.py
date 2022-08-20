@@ -25,9 +25,9 @@ class MotionDetect(Resource):
 
     def post(self):
         data = request.get_json()
-        if(data['motion'] == "1"):
+        if data['motion'] == "1":
             settings.motion = "Motion Detected"
-        else:
+        elif data['motion'] == "0":
             settings.motion = "No motion detected"
         return settings.motion, 201
 
